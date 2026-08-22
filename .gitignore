@@ -1,0 +1,12 @@
+.DS_Store
+
+node_modules
+.next
+out
+
+.vercel
+.env*
+content/admin-auth.json
+
+work-assets/deploy-link-backup
+work-assets/qa-*.png
