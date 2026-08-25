@@ -40,7 +40,7 @@ export default async function Home() {
     logo: `${siteUrl}/images/firat-ek-logo.webp`,
     image: `${siteUrl}/images/og-image.webp`,
     description:
-      "Fırat Eğitim Kurumları; okul öncesinden liseye güvenli kampüs, akademik takip ve öğrenciyi merkeze alan eğitim yaklaşımı sunar.",
+      "Fırat Eğitim Kurumları olarak okul öncesinden liseye güvenli kampüs, akademik takip ve öğrenciyi merkeze alan eğitim yaklaşımı sunuyoruz.",
     areaServed: "Türkiye",
     availableLanguage: "tr"
   };
@@ -58,11 +58,6 @@ export default async function Home() {
 
       <main id="icerik">
         <section className="hero" aria-labelledby="hero-title">
-          <span className="decor decorCircle" aria-hidden="true" />
-          <span className="decor decorGlobe" aria-hidden="true" />
-          <span className="decor decorBook" aria-hidden="true" />
-          <span className="decor decorDot" aria-hidden="true" />
-
           <div className="container heroInner">
             <div className="heroCopy">
               <h1 id="hero-title">
@@ -76,10 +71,6 @@ export default async function Home() {
 
             {heroImages.length ? (
               <div className="heroVisual" aria-label="Fırat Eğitim Kurumları kampüs görselleri">
-                <span className="capFloat" aria-hidden="true">
-                  <GraduationCap size={76} />
-                </span>
-                <span className="redGlow" aria-hidden="true" />
                 {heroImages.map((image, index) => (
                   <div className={`visualTile ${image.className}`} key={image.alt}>
                     <Image

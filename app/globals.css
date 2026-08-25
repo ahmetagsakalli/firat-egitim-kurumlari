@@ -305,93 +305,6 @@ main {
   border-radius: 48% 52% 44px 44px;
 }
 
-.capFloat {
-  color: #111;
-  filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.18));
-  left: -70px;
-  position: absolute;
-  top: -54px;
-  transform: rotate(18deg);
-  z-index: 3;
-}
-
-.redGlow {
-  background: radial-gradient(circle, rgba(168, 32, 42, 0.45), rgba(168, 32, 42, 0) 68%);
-  height: 110px;
-  left: -44px;
-  position: absolute;
-  top: 245px;
-  width: 110px;
-  z-index: -1;
-}
-
-.decor {
-  border-color: rgba(8, 17, 46, 0.08);
-  color: rgba(8, 17, 46, 0.08);
-  pointer-events: none;
-  position: absolute;
-}
-
-.decorCircle {
-  border: 5px solid rgba(8, 17, 46, 0.08);
-  border-radius: 999px;
-  height: 48px;
-  left: 7%;
-  top: 23%;
-  width: 48px;
-}
-
-.decorCircle::after {
-  border: 4px solid rgba(8, 17, 46, 0.08);
-  border-radius: inherit;
-  content: "";
-  height: 18px;
-  position: absolute;
-  right: -28px;
-  top: 52px;
-  width: 18px;
-}
-
-.decorGlobe {
-  border: 3px solid rgba(8, 17, 46, 0.08);
-  border-radius: 999px;
-  height: 80px;
-  left: 33%;
-  top: 14%;
-  width: 80px;
-}
-
-.decorGlobe::after {
-  background: rgba(8, 17, 46, 0.08);
-  content: "";
-  height: 44px;
-  position: absolute;
-  right: -18px;
-  top: 62px;
-  transform: rotate(-36deg);
-  width: 4px;
-}
-
-.decorBook {
-  border: 3px solid rgba(8, 17, 46, 0.08);
-  border-radius: 6px;
-  bottom: -24px;
-  height: 58px;
-  left: 36%;
-  transform: rotate(14deg);
-  width: 86px;
-}
-
-.decorDot {
-  background: var(--accent-red);
-  border-radius: 999px;
-  bottom: 17%;
-  box-shadow: 0 14px 28px rgba(168, 32, 42, 0.18);
-  height: 48px;
-  left: 52%;
-  width: 48px;
-}
-
 .strengthSection,
 .aboutSection,
 .programSection,
@@ -414,9 +327,8 @@ main {
 
 .strengthCard {
   align-items: center;
-  background:
-    radial-gradient(circle at top right, rgba(13, 93, 184, 0.13), transparent 34%),
-    linear-gradient(145deg, #ffffff 0%, #f7fbff 100%);
+  background: white;
+  --card-heading-accent: rgba(13, 93, 184, 0.7);
   border: 1px solid rgba(223, 232, 244, 0.96);
   border-radius: 28px;
   box-shadow: 0 18px 40px rgba(8, 17, 46, 0.07);
@@ -425,6 +337,26 @@ main {
   min-height: 218px;
   padding: 26px 22px;
   text-align: center;
+}
+
+.strengthCard:nth-child(4n + 2),
+.programCard:nth-child(4n + 2),
+.detailCard:nth-child(4n + 2),
+.aboutMiniCard:nth-child(3n + 2) {
+  --card-heading-accent: rgba(168, 32, 42, 0.62);
+}
+
+.strengthCard:nth-child(4n + 3),
+.programCard:nth-child(4n + 3),
+.detailCard:nth-child(4n + 3),
+.aboutMiniCard:nth-child(3n + 3) {
+  --card-heading-accent: rgba(8, 73, 142, 0.68);
+}
+
+.strengthCard:nth-child(4n + 4),
+.programCard:nth-child(4n + 4),
+.detailCard:nth-child(4n + 4) {
+  --card-heading-accent: rgba(6, 26, 63, 0.62);
 }
 
 .strengthCard span,
@@ -452,10 +384,28 @@ main {
 .programCard h3 {
   color: var(--navy);
   font-size: 1.25rem;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.25;
   margin: 8px 0 4px;
+  padding-top: 14px;
+  position: relative;
   text-align: center;
+}
+
+.strengthCard h3::before,
+.programCard h3::before,
+.detailCard h2::before,
+.aboutMiniCard h2::before,
+.aboutReasonCard h2::before {
+  background: var(--card-heading-accent, rgba(13, 93, 184, 0.7));
+  border-radius: 999px;
+  content: "";
+  height: 4px;
+  left: 50%;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  width: 46px;
 }
 
 .strengthCard p,
@@ -527,9 +477,7 @@ main {
 
 .checkList li {
   align-items: center;
-  background:
-    radial-gradient(circle at 92% 10%, rgba(13, 93, 184, 0.12), transparent 28%),
-    linear-gradient(135deg, #ffffff 0%, #f7fbff 64%, #eef6ff 100%);
+  background: white;
   border: 1px solid rgba(13, 93, 184, 0.12);
   border-radius: 999px;
   box-shadow: 0 18px 38px rgba(7, 40, 86, 0.08);
@@ -555,29 +503,6 @@ main {
   top: 50%;
   transform: translateY(-50%);
   width: 42px;
-}
-
-.checkList li::after {
-  background: rgba(13, 93, 184, 0.06);
-  border-radius: 999px;
-  content: "";
-  height: 88px;
-  position: absolute;
-  right: -28px;
-  top: -34px;
-  width: 88px;
-}
-
-.checkList li:nth-child(2) {
-  background:
-    radial-gradient(circle at 92% 10%, rgba(168, 32, 42, 0.07), transparent 30%),
-    linear-gradient(135deg, #ffffff 0%, #f3f8ff 55%, #fbfdff 100%);
-}
-
-.checkList li:nth-child(3) {
-  background:
-    radial-gradient(circle at 92% 10%, rgba(6, 26, 63, 0.08), transparent 30%),
-    linear-gradient(135deg, #ffffff 0%, #f8fbff 60%, #edf5ff 100%);
 }
 
 .checkList svg {
@@ -620,6 +545,7 @@ main {
 
 .programCard {
   background: white;
+  --card-heading-accent: rgba(13, 93, 184, 0.7);
   border: 1px solid var(--line);
   border-radius: 30px;
   box-shadow: 0 14px 34px rgba(8, 17, 46, 0.07);
@@ -668,7 +594,7 @@ main {
 }
 
 .successNumbers div {
-  background: var(--soft);
+  background: white;
   border: 1px solid var(--line);
   border-radius: 26px;
   padding: 20px 14px;
@@ -815,9 +741,9 @@ main {
 
 .detailHero h1 {
   color: var(--navy);
-  font-size: clamp(3.2rem, 6vw, 5.2rem);
+  font-size: clamp(2.75rem, 4.35vw, 4.05rem);
   font-weight: 700;
-  line-height: 1.06;
+  line-height: 1.1;
   margin-bottom: 24px;
   text-wrap: balance;
 }
@@ -839,40 +765,10 @@ main {
   position: relative;
 }
 
-.detailHeroImage::after {
-  background: var(--accent-red);
-  border-radius: 999px;
-  bottom: 22px;
-  box-shadow: 0 16px 30px rgba(168, 32, 42, 0.2);
-  content: "";
-  height: 58px;
-  left: 28px;
-  position: absolute;
-  width: 58px;
-}
-
 .detailHeroImage img {
   height: 100%;
   object-fit: cover;
   width: 100%;
-}
-
-.detailSummaryBand {
-  background: white;
-  border-bottom: 1px solid var(--line);
-  border-top: 1px solid var(--line);
-  padding: 50px 0;
-}
-
-.detailSummary {
-  color: var(--navy);
-  font-size: 1.32rem;
-  font-weight: 400;
-  line-height: 1.78;
-  margin: 0 auto;
-  max-width: 940px;
-  text-align: center;
-  text-wrap: balance;
 }
 
 .detailStats {
@@ -923,9 +819,8 @@ main {
 }
 
 .detailCard {
-  background:
-    radial-gradient(circle at 92% 8%, rgba(13, 93, 184, 0.1), transparent 28%),
-    linear-gradient(145deg, #ffffff 0%, #f7fbff 100%);
+  background: white;
+  --card-heading-accent: rgba(13, 93, 184, 0.7);
   border: 1px solid rgba(223, 232, 244, 0.96);
   border-radius: 30px;
   box-shadow: 0 16px 38px rgba(8, 17, 46, 0.06);
@@ -936,9 +831,11 @@ main {
 .detailCard h2 {
   color: var(--navy);
   font-size: 2.1rem;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.18;
   margin-bottom: 14px;
+  padding-top: 18px;
+  position: relative;
   text-align: center;
   text-wrap: balance;
 }
@@ -963,7 +860,7 @@ main {
 
 .detailCard li {
   align-items: flex-start;
-  background: rgba(255, 255, 255, 0.7);
+  background: white;
   border: 1px solid rgba(13, 93, 184, 0.1);
   border-radius: 20px;
   color: var(--navy);
@@ -992,9 +889,8 @@ main {
 
 .aboutMiniCard,
 .aboutReasonCard {
-  background:
-    radial-gradient(circle at 90% 10%, rgba(13, 93, 184, 0.1), transparent 30%),
-    linear-gradient(145deg, #ffffff 0%, #f8fbff 100%);
+  background: white;
+  --card-heading-accent: rgba(13, 93, 184, 0.7);
   border: 1px solid rgba(223, 232, 244, 0.96);
   box-shadow: 0 16px 34px rgba(7, 40, 86, 0.06);
 }
@@ -1011,9 +907,11 @@ main {
 .aboutMiniCard h2,
 .aboutReasonCard h2 {
   color: var(--navy);
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.16;
   margin-bottom: 14px;
+  padding-top: 18px;
+  position: relative;
   text-align: center;
   text-wrap: balance;
 }
@@ -1032,6 +930,7 @@ main {
 }
 
 .aboutReasonCard {
+  --card-heading-accent: rgba(168, 32, 42, 0.62);
   border-radius: 28px;
   padding: 34px;
 }
@@ -1061,7 +960,7 @@ main {
 
 .aboutReasonCard li {
   align-items: center;
-  background: rgba(255, 255, 255, 0.78);
+  background: white;
   border: 1px solid rgba(13, 93, 184, 0.12);
   border-radius: 18px;
   color: var(--navy);
@@ -1386,7 +1285,7 @@ main {
   }
 
   .detailHero h1 {
-    font-size: 4rem;
+    font-size: 3.25rem;
   }
 }
 
@@ -1539,7 +1438,26 @@ main {
     padding: 8px;
     position: fixed;
     right: 12px;
+    transform-origin: bottom center;
+    transition:
+      border-radius 180ms ease,
+      box-shadow 180ms ease,
+      left 180ms ease,
+      min-height 180ms ease,
+      padding 180ms ease,
+      right 180ms ease,
+      transform 180ms ease;
     z-index: 110;
+  }
+
+  .mobileTabBar.isCompact {
+    border-radius: 24px;
+    box-shadow: 0 12px 30px rgba(7, 40, 86, 0.15);
+    left: 20px;
+    min-height: 62px;
+    padding: 6px 7px;
+    right: 20px;
+    transform: translateY(2px) scale(0.965);
   }
 
   .mobileTabBar a {
@@ -1556,12 +1474,34 @@ main {
     min-width: 0;
     padding: 8px 4px;
     text-align: center;
-    transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+    transition:
+      background 160ms ease,
+      border-radius 180ms ease,
+      color 160ms ease,
+      font-size 180ms ease,
+      gap 180ms ease,
+      min-height 180ms ease,
+      padding 180ms ease,
+      transform 160ms ease;
+  }
+
+  .mobileTabBar.isCompact a {
+    border-radius: 18px;
+    font-size: 0.66rem;
+    gap: 1px;
+    min-height: 48px;
+    padding: 5px 3px;
   }
 
   .mobileTabBar a svg {
     height: 23px;
+    transition: height 180ms ease, width 180ms ease;
     width: 23px;
+  }
+
+  .mobileTabBar.isCompact a svg {
+    height: 20px;
+    width: 20px;
   }
 
   .mobileTabBar a.isActive {
@@ -1575,6 +1515,14 @@ main {
 
   .mobileTabBar a:active {
     transform: scale(0.97);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mobileTabBar,
+    .mobileTabBar a,
+    .mobileTabBar a svg {
+      transition: none;
+    }
   }
 }
 
@@ -1642,12 +1590,6 @@ main {
     border-radius: 48% 52% 34px 34px;
   }
 
-  .capFloat,
-  .redGlow,
-  .decor {
-    display: none;
-  }
-
   .strengthSection,
   .aboutSection,
   .programSection,
@@ -1691,7 +1633,7 @@ main {
   }
 
   .detailHero h1 {
-    font-size: clamp(2.2rem, 11vw, 2.85rem);
+    font-size: clamp(2rem, 9.5vw, 2.45rem);
   }
 
   .detailHero p {
@@ -1701,19 +1643,6 @@ main {
 
   .detailHeroImage {
     border-radius: 38px;
-  }
-
-  .detailHeroImage::after {
-    height: 42px;
-    width: 42px;
-  }
-
-  .detailSummaryBand {
-    padding: 36px 0;
-  }
-
-  .detailSummary {
-    font-size: 1.08rem;
   }
 
   .detailCard {

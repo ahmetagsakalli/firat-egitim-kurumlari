@@ -164,12 +164,6 @@ export default async function DetailPage({ params }: PageProps) {
           </div>
         </section>
 
-        <section className="detailSummaryBand">
-          <div className="container">
-            <p className="detailSummary">{page.summary}</p>
-          </div>
-        </section>
-
         {page.stats ? (
           <section className="detailStats" aria-label="Başarı göstergeleri">
             <div className="container detailStatGrid">
@@ -248,8 +242,8 @@ export default async function DetailPage({ params }: PageProps) {
         <section className="detailCtaSection">
           <div className="container detailCta">
             <div>
-              <h2>Fırat'ı yakından tanımak için görüşme planlayın.</h2>
-              <p>Kampüs gezisi, kademe bilgisi ve kayıt süreci için bize ulaşabilirsiniz.</p>
+              <h2>Bizi yakından tanımak için görüşme planlayın.</h2>
+              <p>Kampüs gezisi, kademe bilgisi ve kayıt süreci için bize ulaşın.</p>
             </div>
             <a className="lightButton" href={contact.phoneHref}>
               <Phone aria-hidden="true" size={20} />

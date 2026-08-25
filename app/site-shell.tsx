@@ -4,6 +4,7 @@ import { ChevronRight, Phone } from "lucide-react";
 import { MobileTabBar } from "./mobile-tab-bar";
 import { getSiteContent } from "./cms/content";
 import type { SocialPlatform } from "./cms/types";
+import { WhatsAppIcon } from "./whatsapp-icon";
 
 function SocialIcon({ platform }: { platform: SocialPlatform }) {
   if (platform === "facebook") {
@@ -40,17 +41,6 @@ function SocialIcon({ platform }: { platform: SocialPlatform }) {
     <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
       <path
         d="M22.55 7.14a3.02 3.02 0 0 0-2.12-2.14C18.56 4.5 12 4.5 12 4.5s-6.56 0-8.43.5a3.02 3.02 0 0 0-2.12 2.14C.95 9.03.95 12.96.95 12.96s0 3.93.5 5.82a3.02 3.02 0 0 0 2.12 2.14c1.87.5 8.43.5 8.43.5s6.56 0 8.43-.5a3.02 3.02 0 0 0 2.12-2.14c.5-1.89.5-5.82.5-5.82s0-3.93-.5-5.82ZM9.8 16.5v-7.1l5.78 3.55L9.8 16.5Z"
-        fill="currentColor"
-      />
-    </svg>
-  );
-}
-
-function WhatsAppIcon() {
-  return (
-    <svg aria-hidden="true" focusable="false" viewBox="0 0 32 32">
-      <path
-        d="M16.04 4.4a11.24 11.24 0 0 0-9.58 17.1L5.2 26.8l5.45-1.22A11.24 11.24 0 1 0 16.04 4.4Zm0 2.22a9.02 9.02 0 0 1 7.76 13.62 8.98 8.98 0 0 1-11.9 3.3l-.42-.22-3.02.68.7-2.94-.26-.44a9.02 9.02 0 0 1 7.14-14Zm-3.52 4.92c-.2 0-.54.08-.82.4-.28.3-1.08 1.04-1.08 2.54 0 1.5 1.1 2.96 1.24 3.16.16.2 2.12 3.4 5.28 4.64 2.62 1.04 3.16.84 3.72.78.58-.08 1.86-.76 2.12-1.5.26-.72.26-1.36.18-1.5-.08-.12-.28-.2-.58-.34-.3-.16-1.84-.9-2.12-1-.28-.1-.48-.16-.68.16-.2.3-.78.98-.96 1.18-.18.2-.36.22-.66.08-.3-.16-1.28-.48-2.44-1.52-.9-.8-1.52-1.8-1.7-2.1-.18-.3-.02-.48.14-.62.14-.14.3-.36.46-.54.16-.18.2-.3.3-.5.1-.2.06-.38-.02-.54-.08-.16-.68-1.64-.94-2.24-.24-.58-.5-.5-.68-.52h-.58Z"
         fill="currentColor"
       />
     </svg>
@@ -157,7 +147,7 @@ export async function SiteFooter() {
           rel="noopener noreferrer"
           target="_blank"
         >
-          <WhatsAppIcon />
+          <WhatsAppIcon size={31} />
         </a>
       </div>
 

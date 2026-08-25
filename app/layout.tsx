@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s | Fırat Eğitim Kurumları"
   },
   description:
-    "Fırat Eğitim Kurumları; okul öncesinden liseye güvenli kampüs, akademik takip, sosyal gelişim ve YKS hedeflerini birlikte destekleyen eğitim yaklaşımı sunar.",
+    "Fırat Eğitim Kurumları olarak okul öncesinden liseye güvenli kampüs, akademik takip, sosyal gelişim ve YKS hedeflerini birlikte destekleyen eğitim yaklaşımı sunuyoruz.",
   applicationName: "Fırat Eğitim Kurumları",
   authors: [{ name: "Fırat Eğitim Kurumları" }],
   creator: "Fırat Eğitim Kurumları",

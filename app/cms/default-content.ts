@@ -44,27 +44,27 @@ export const defaultHomeContent: HomeContent = {
     {
       value: "1987",
       title: "Köklü Deneyim",
-      text: "Kendini yenileyen okul kültürü"
+      text: "Kendini yenileyen okul kültürümüz"
     },
     {
       value: "Bütüncül",
       title: "Eğitim Modeli",
-      text: "Akademik ve sosyal gelişim"
+      text: "Akademik ve sosyal gelişimi birlikte ele alıyoruz"
     },
     {
       value: "Yakın",
       title: "Öğrenci Takibi",
-      text: "Rehberlik ve veli iletişimi"
+      text: "Öğrencilerimizi yakından izliyoruz"
     },
     {
       value: "Güvenli",
       title: "Kampüs Yaşamı",
-      text: "Düzenli ve kontrollü alanlar"
+      text: "Düzenli ve kontrollü alanlarımız"
     }
   ],
   about: {
     title: "Fırat'ta eğitim, öğrenciyi tanımakla başlar.",
-    text: "1987'den bu yana anaokulu, ilkokul, ortaokul ve Anadolu Lisesi kademelerinde öğrencinin akademik gelişimi, sosyal uyumu ve hedefleri birlikte takip edilir.",
+    text: "1987'den bu yana anaokulu, ilkokul, ortaokul ve Anadolu Lisesi kademelerinde öğrencilerimizin akademik gelişimini, sosyal uyumunu ve hedeflerini birlikte takip ediyoruz.",
     bullets: [
       "Sıcak bir aile ortamı",
       "15 kişilik özel sınıflar",
@@ -75,33 +75,33 @@ export const defaultHomeContent: HomeContent = {
   },
   programIntro: {
     title: "Akademik Programlar",
-    text: "Her bölüm, yaş grubunun ihtiyacına göre yapılandırılır; rehberlik, atölye ve sosyal gelişim çalışmalarıyla desteklenir."
+    text: "Her bölümü yaş grubunun ihtiyacına göre yapılandırıyor; rehberlik, atölye ve sosyal gelişim çalışmalarıyla destekliyoruz."
   },
   programs: [
     {
       title: "Anaokulu",
-      text: "Sevgi temelli başlangıç, oyun, sanat ve yabancı dil desteği.",
+      text: "Sevgi temelli başlangıcı oyun, sanat ve yabancı dil desteğiyle kuruyoruz.",
       image: "/images/firat-kindergarten.webp"
     },
     {
       title: "İlkokul",
-      text: "Okuma, yazma, arkadaşlık ve kişisel sorumluluk becerileri.",
+      text: "Okuma, yazma, arkadaşlık ve kişisel sorumluluk becerilerini birlikte geliştiriyoruz.",
       image: "/images/firat-classroom.webp"
     },
     {
       title: "Ortaokul",
-      text: "Akıllı tahta uygulamalarıyla desteklenen disiplinli çalışma.",
+      text: "Akıllı tahta uygulamalarıyla disiplinli çalışmayı destekliyoruz.",
       image: "/images/firat-reading.webp"
     },
     {
       title: "Anadolu Lisesi",
-      text: "YKS hedefi, meslek yönelimi ve bireysel rehberlik.",
+      text: "YKS hedefini, meslek yönelimini ve bireysel rehberliği birlikte yürütüyoruz.",
       image: "/images/classroom-smartboard.webp"
     }
   ],
   success: {
-    title: "Başarı, düzenli takip ve doğru hedefle gelir.",
-    text: "2026 YKS'de sınava giren 164 öğrencimizden alınan dereceler, planlı takip ve hedef odaklı lise programının güçlü çıktıları arasında yer alıyor.",
+    title: "Başarıyı düzenli takip ve doğru hedefle büyütüyoruz.",
+    text: "2026 YKS'de sınava giren 164 öğrencimizle elde ettiğimiz dereceler, planlı takip ve hedef odaklı lise programımızın güçlü çıktıları arasında yer alıyor.",
     image: "/images/firat-yks-success.webp",
     imageAlt: "Fırat Koleji tam isabet başarı görseli",
     stats: [
@@ -112,7 +112,7 @@ export const defaultHomeContent: HomeContent = {
   },
   campus: {
     title: "Kampüs Yaşamı",
-    text: "Derslikler, açık alanlar, spor sahası ve sosyal etkinlikler öğrencinin okul deneyimini bütünler.",
+    text: "Dersliklerimiz, açık alanlarımız, spor sahamız ve sosyal etkinliklerimizle öğrencilerimizin okul deneyimini bütünlüyoruz.",
     images: [
       {
         src: "/images/firat-reading.webp",
@@ -128,9 +128,9 @@ export const defaultHomeContent: HomeContent = {
     title: "2026-2027 kayıt görüşmeleri başladı.",
     text: "Çocuğunuzun eğitim yolculuğunu birlikte planlayalım. Kampüs gezisi, seviye görüşmesi ve kontenjan bilgisi için bize ulaşın.",
     processItems: [
-      "Öğrenci seviyesi ve veli beklentisi birlikte değerlendirilir.",
-      "Kampüs, sınıf, bahçe ve sosyal alanlar yerinde gezilir.",
-      "Kontenjan ve kayıt süreci net şekilde paylaşılır."
+      "Öğrenci seviyesini ve veli beklentisini birlikte değerlendiriyoruz.",
+      "Kampüsü, sınıfları, bahçeyi ve sosyal alanları birlikte geziyoruz.",
+      "Kontenjan ve kayıt sürecini net şekilde paylaşıyoruz."
     ]
   }
 };
