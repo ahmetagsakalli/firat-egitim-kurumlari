@@ -1332,7 +1332,9 @@ main {
   .heroCopy {
     margin: 0 auto;
     max-width: 680px;
+    min-width: 0;
     text-align: center;
+    width: 100%;
   }
 
   .hero h1 {

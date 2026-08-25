@@ -34,9 +34,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const page = getDetailPageFromContent(content, slug);
 
   if (!page) {
-    return {
-      title: "Sayfa Bulunamadı"
-    };
+    notFound();
   }
 
   const metaImage = hasImage(page.image) ? page.image : fallbackImage;
