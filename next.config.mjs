@@ -5,6 +5,7 @@ const nextConfig = {
   devIndicators: false,
   allowedDevOrigins: ["127.0.0.1"],
   poweredByHeader: false,
+  htmlLimitedBots: /.*/,
   images: {
     unoptimized: process.env.NODE_ENV === "development",
     formats: ["image/avif", "image/webp"],
