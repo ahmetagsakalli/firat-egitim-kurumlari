@@ -16,6 +16,7 @@ import {
   UsersRound
 } from "lucide-react";
 import { getSiteContent } from "./cms/content";
+import { HeroTypewriter } from "./hero-typewriter";
 import { SiteFooter, SiteHeader } from "./site-shell";
 
 export const dynamic = "force-dynamic";
@@ -68,6 +69,7 @@ export const metadata: Metadata = {
 
 const strengthIcons = [Award, BookOpenCheck, UsersRound, ShieldCheck];
 const programIcons = [School, BookOpenCheck, Target, GraduationCap];
+const defaultHeroTypewriterWords = ["Mutlu", "Öncü", "Özgür", "Cesur"];
 
 function hasImage(src?: string) {
   return Boolean(src?.trim());
@@ -78,6 +80,12 @@ export default async function Home() {
   const { contact, home, siteUrl } = content;
   const heroImages = home.hero.images.filter((image) => hasImage(image.src));
   const campusImages = home.campus.images.filter((image) => hasImage(image.src));
+  const [heroAccentWord = "Güçlü", ...heroAccentSuffixParts] = home.hero.accent.trim().split(/\s+/);
+  const heroAccentSuffix = heroAccentSuffixParts.join(" ") || "Gelecek";
+  const heroTypewriterWords = [
+    heroAccentWord,
+    ...defaultHeroTypewriterWords.filter((word) => word !== heroAccentWord)
+  ];
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
@@ -108,7 +116,10 @@ export default async function Home() {
           <div className="container heroInner">
             <div className="heroCopy">
               <h1 id="hero-title">
-                {home.hero.title} <span>{home.hero.accent}</span>
+                {home.hero.title}{" "}
+                <span className="heroAccent">
+                  <HeroTypewriter suffix={heroAccentSuffix} words={heroTypewriterWords} />
+                </span>
               </h1>
               <p>{home.hero.text}</p>
               <Link className="primaryButton" href={home.hero.ctaHref}>

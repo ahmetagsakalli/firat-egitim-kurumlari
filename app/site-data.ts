@@ -147,8 +147,8 @@ export const detailPages: DetailPage[] = [
     title: "Kayıt ve Tanışma Süreci",
     description:
       "Aileyi ve öğrencimizi tanıyarak başladığımız süreci kampüs gezisi, seviye değerlendirmesi ve kontenjan bilgilendirmesiyle birlikte netleştiriyoruz.",
-    image: "/images/firat-building.webp",
-    imageAlt: "Fırat Eğitim Kurumları okul binası",
+    image: "/uploads/firat-kayit-kampus-2026-08-26.jpg",
+    imageAlt: "Fırat Eğitim Kurumları okul binası ve kampüs girişi",
     summary:
       "Kayıt görüşmelerinde öğrencimizin mevcut durumunu, hedeflerini ve velimizin beklentilerini birlikte değerlendiriyoruz. Böylece doğru kademe, doğru çalışma planı ve doğru iletişim zeminini oluşturuyoruz.",
     sections: [
