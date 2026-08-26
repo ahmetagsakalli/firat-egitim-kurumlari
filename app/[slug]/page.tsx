@@ -8,7 +8,8 @@ import { resolveImageSrc } from "../cms/image-src";
 import { SiteFooter, SiteHeader } from "../site-shell";
 
 const aboutSmallSectionTitles = new Set(["Vizyonumuz", "Misyonumuz", "Hedefimiz"]);
-export const dynamic = "force-dynamic";
+export const dynamicParams = false;
+export const revalidate = 3600;
 const fallbackImage = "/images/og-image.webp";
 
 type PageProps = {

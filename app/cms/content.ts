@@ -2,6 +2,7 @@ import "server-only";
 
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { cache } from "react";
 import { defaultSiteContent } from "./default-content";
 import type { HomeContent, SiteContent } from "./types";
 
@@ -111,7 +112,7 @@ function normalizeSiteContent(content: PartialSiteContent): SiteContent {
   };
 }
 
-export async function getSiteContent() {
+export const getSiteContent = cache(async function getSiteContent() {
   try {
     const file = await readFile(contentFilePath, "utf8");
     return normalizeSiteContent(JSON.parse(file) as PartialSiteContent);
@@ -122,7 +123,7 @@ export async function getSiteContent() {
 
     throw error;
   }
-}
+});
 
 export async function saveSiteContent(content: SiteContent) {
   const normalizedContent = normalizeSiteContent(content);

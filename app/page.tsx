@@ -20,7 +20,7 @@ import { resolveImageSrc } from "./cms/image-src";
 import { HeroTypewriter } from "./hero-typewriter";
 import { SiteFooter, SiteHeader } from "./site-shell";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: {
@@ -138,7 +138,7 @@ export default async function Home() {
                       width={480}
                       height={430}
                       sizes="(max-width: 900px) 44vw, 22vw"
-                      loading="eager"
+                      loading={index === 0 ? "eager" : "lazy"}
                       preload={index === 0}
                     />
                   </div>
