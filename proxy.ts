@@ -29,6 +29,12 @@ export async function proxy(request: NextRequest) {
   const notFoundUrl = request.nextUrl.clone();
   notFoundUrl.pathname = "/__not-found/invalid";
 
+  // TLS terminates at nginx. Next.js receives the public HTTPS protocol via
+  // X-Forwarded-Proto, but its internal listener is plain HTTP.
+  if (notFoundUrl.hostname === "localhost" || notFoundUrl.hostname === "127.0.0.1") {
+    notFoundUrl.protocol = "http:";
+  }
+
   return NextResponse.rewrite(notFoundUrl, { status: 404 });
 }
 
