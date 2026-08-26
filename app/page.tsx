@@ -16,6 +16,7 @@ import {
   UsersRound
 } from "lucide-react";
 import { getSiteContent } from "./cms/content";
+import { resolveImageSrc } from "./cms/image-src";
 import { HeroTypewriter } from "./hero-typewriter";
 import { SiteFooter, SiteHeader } from "./site-shell";
 
@@ -132,7 +133,7 @@ export default async function Home() {
                 {heroImages.map((image, index) => (
                   <div className={`visualTile ${image.className}`} key={image.alt}>
                     <Image
-                      src={image.src}
+                      src={resolveImageSrc(image.src)}
                       alt={image.alt}
                       width={480}
                       height={430}
@@ -182,7 +183,7 @@ export default async function Home() {
             {hasImage(home.about.image) ? (
               <div className="aboutImage">
                 <Image
-                  src={home.about.image}
+                  src={resolveImageSrc(home.about.image)}
                   alt={home.about.imageAlt}
                   width={1200}
                   height={760}
@@ -208,7 +209,7 @@ export default async function Home() {
                     {hasImage(program.image) ? (
                       <div className="programImage">
                         <Image
-                          src={program.image}
+                          src={resolveImageSrc(program.image)}
                           alt={`${program.title} eğitim ortamı`}
                           width={700}
                           height={520}
@@ -235,7 +236,7 @@ export default async function Home() {
             {hasImage(home.success.image) ? (
               <div className="successImage">
                 <Image
-                  src={home.success.image}
+                  src={resolveImageSrc(home.success.image)}
                   alt={home.success.imageAlt}
                   width={920}
                   height={640}
@@ -272,7 +273,7 @@ export default async function Home() {
                   height={index === 0 ? 740 : 680}
                   key={image.src}
                   sizes={index === 0 ? "(max-width: 900px) 100vw, 58vw" : "(max-width: 900px) 100vw, 36vw"}
-                  src={image.src}
+                  src={resolveImageSrc(image.src)}
                   width={index === 0 ? 1180 : 900}
                 />
               ))}

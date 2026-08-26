@@ -21,6 +21,7 @@ import {
   type AdminActionState,
   type ChangePasswordResult
 } from "./actions";
+import { resolveImageSrc } from "../cms/image-src";
 import type { DetailPage, DetailSection, HomeContent, SiteContent, StatItem } from "../cms/types";
 
 const initialState: AdminActionState = {};
@@ -140,8 +141,9 @@ function ImageField({ label, onChange, onUploadStateChange, value }: ImageFieldP
           <Image
             alt={`${label} önizleme`}
             fill
+            unoptimized
             sizes="(max-width: 760px) 100vw, 32vw"
-            src={value}
+            src={resolveImageSrc(value)}
           />
         ) : (
           <span className="adminImageEmpty">

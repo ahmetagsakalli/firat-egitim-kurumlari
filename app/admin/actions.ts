@@ -1,6 +1,5 @@
 "use server";
 
-import { mkdir } from "node:fs/promises";
 import path from "node:path";
 import { randomUUID } from "node:crypto";
 import { revalidatePath } from "next/cache";
@@ -15,6 +14,7 @@ import {
 } from "./auth";
 import { saveSiteContent } from "../cms/content";
 import type { SiteContent } from "../cms/types";
+import { ensureUploadsDir, getUploadedImageUrl } from "../cms/upload-storage";
 
 export type AdminActionState = {
   ok?: boolean;
@@ -168,10 +168,9 @@ export async function uploadImageAction(formData: FormData): Promise<UploadImage
     const originalName = file.name.replace(/\.[^.]+$/, "");
     const safeName = slugifyFileName(originalName) || "gorsel";
     const fileName = `${Date.now()}-${randomUUID().slice(0, 8)}-${safeName}.webp`;
-    const uploadsDir = path.join(process.cwd(), "public", "uploads");
+    const uploadsDir = await ensureUploadsDir();
     const filePath = path.join(uploadsDir, fileName);
 
-    await mkdir(uploadsDir, { recursive: true });
     await sharp(sourceBuffer)
       .rotate()
       .resize({
@@ -185,7 +184,7 @@ export async function uploadImageAction(formData: FormData): Promise<UploadImage
 
     return {
       ok: true,
-      path: `/uploads/${fileName}`
+      path: getUploadedImageUrl(fileName)
     };
   } catch (error) {
     return {

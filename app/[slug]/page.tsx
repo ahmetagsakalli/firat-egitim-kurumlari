@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowLeft, CheckCircle2, Phone } from "lucide-react";
 import { notFound } from "next/navigation";
 import { getDetailPageFromContent, getSiteContent } from "../cms/content";
+import { resolveImageSrc } from "../cms/image-src";
 import { SiteFooter, SiteHeader } from "../site-shell";
 
 const aboutSmallSectionTitles = new Set(["Vizyonumuz", "Misyonumuz", "Hedefimiz"]);
@@ -37,7 +38,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     notFound();
   }
 
-  const metaImage = hasImage(page.image) ? page.image : fallbackImage;
+  const metaImage = resolveImageSrc(hasImage(page.image) ? page.image : fallbackImage);
 
   return {
     title: page.title,
@@ -87,7 +88,7 @@ export default async function DetailPage({ params }: PageProps) {
   const aboutReasonSection = isAboutPage
     ? page.sections.find((section) => section.title === "Neden Fırat?")
     : undefined;
-  const pageImage = hasImage(page.image) ? page.image : "";
+  const pageImage = hasImage(page.image) ? resolveImageSrc(page.image) : "";
 
   const jsonLd = {
     "@context": "https://schema.org",
